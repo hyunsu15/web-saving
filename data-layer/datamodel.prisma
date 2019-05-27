@@ -1,0 +1,30 @@
+type Deal{
+  ID: ID! @id
+  createdAt: DateTime! @createdAt
+  admin:Admin!@relation(link: TABLE)
+
+
+  address: String!  
+  
+  productName: String!
+  productNum:String!
+  productCost:Int!
+
+  userName: String!
+  userPhonNumber: String! 
+  isDeliver:Boolean! @default(value:false)
+  isAllPay: Boolean! @default(value:false)
+  payPerson:String
+}
+
+ 
+type Admin{
+  ID: ID! @id
+  name: String!
+  password:String!
+  deals: [Deal!]!
+}
+
+  
+
+  
